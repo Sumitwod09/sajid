@@ -3,10 +3,9 @@ import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import { LenisProvider } from '@/lib/lenis/LenisProvider'
 import { PreloaderProvider } from '@/components/sections/Preloader'
-import { CustomCursor } from '@/components/ui/CustomCursor'
+import { GradientBlob } from '@/components/ui/GradientBlob'
 import { Navbar } from '@/components/layout/Navbar'
 
-// Fallback body font via Google (self-host Editorial New / Neue Montreal when available)
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-body',
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        {/* Structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -51,7 +49,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body style={{ backgroundColor: 'var(--black)' }}>
         <LenisProvider>
           <PreloaderProvider>
-            <CustomCursor />
+            {/* Ambient cursor glow — no custom cursor shape, just atmosphere */}
+            <GradientBlob />
             <Navbar />
             <main>{children}</main>
           </PreloaderProvider>

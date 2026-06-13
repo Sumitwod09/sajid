@@ -66,19 +66,11 @@ html {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
 }
 
 body {
   background-color: var(--black);
   overflow-x: hidden;
-}
-
-/* Restore native cursor on touch */
-@media (hover: none) {
-  html {
-    cursor: auto;
-  }
 }
 
 /* ─── Typography base ──────────────────────────── */
