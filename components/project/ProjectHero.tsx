@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { urlForImageString } from '@/lib/sanity/image'
+import { getProjectCoverUrl, projectHasCover } from '@/lib/sanity/image'
 import type { Project } from '@/types/project'
 
 interface ProjectHeroProps {
@@ -7,8 +7,8 @@ interface ProjectHeroProps {
 }
 
 export function ProjectHero({ project }: ProjectHeroProps) {
-  const hasCover = Boolean(project.coverImage?.asset?._ref)
-  const coverSrc = urlForImageString(project.coverImage, 2400)
+  const hasCover = projectHasCover(project)
+  const coverSrc = getProjectCoverUrl(project, 2400)
 
   return (
     <div className="relative w-full" style={{ aspectRatio: '16/9', maxHeight: '90vh' }}>
@@ -34,7 +34,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
         />
       ) : (
         <div
-          className="h-full w-full flex items-center justify-center"
+          className="flex h-full w-full items-center justify-center"
           style={{ backgroundColor: 'var(--surface)' }}
         >
           <span className="text-label" style={{ color: 'var(--muted)' }}>{project.title}</span>

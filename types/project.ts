@@ -40,6 +40,7 @@ export interface Project {
   discipline: Discipline[]
   client?: string
   coverImage: SanityImage
+  coverImageUrl?: string   // External URL used for mock/dev; Sanity image takes over in production
   heroVideoUrl?: string
   overview: string
   gallery: SanityImage[]

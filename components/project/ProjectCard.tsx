@@ -6,7 +6,7 @@ import { useRef, useEffect } from 'react'
 import { gsap, registerGsapPlugins } from '@/lib/gsap/gsapConfig'
 import { TiltCard } from '@/components/ui/TiltCard'
 import { DISCIPLINE_LABELS } from '@/types/project'
-import { urlForImageString } from '@/lib/sanity/image'
+import { getProjectCoverUrl, projectHasCover } from '@/lib/sanity/image'
 import type { Project } from '@/types/project'
 
 interface ProjectCardProps {
@@ -16,8 +16,8 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
-  const coverSrc = urlForImageString(project.coverImage, 1600)
-  const hasCover = Boolean(project.coverImage?.asset?._ref)
+  const coverSrc = getProjectCoverUrl(project, 1600)
+  const hasCover = projectHasCover(project)
 
   // Scroll entrance animation
   useEffect(() => {
