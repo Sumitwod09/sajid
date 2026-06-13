@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { href: '/', label: 'Home' },
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '#contact', label: 'Contact' },
 ]
 
 interface MenuOverlayProps {

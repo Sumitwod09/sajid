@@ -46,7 +46,7 @@ export function Navbar() {
 
           {/* CTA */}
           <Link
-            href="/contact"
+            href="#contact"
             className="swap-btn text-label hidden md:flex items-center rounded-full px-5 py-2"
             style={{ border: '1px solid var(--border)' }}
           >

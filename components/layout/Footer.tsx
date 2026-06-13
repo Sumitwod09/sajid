@@ -12,7 +12,7 @@ export function Footer({ email, instagramUrl, behanceUrl, linkedinUrl }: FooterP
   const contactEmail = email ?? 'hello@sajidsheikh.com'
 
   return (
-    <footer style={{ backgroundColor: 'var(--black)' }}>
+    <footer id="contact" style={{ backgroundColor: 'var(--black)' }}>
       <FooterCTA email={contactEmail} />
 
       {/* Bottom bar */}
